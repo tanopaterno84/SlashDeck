@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><img alt="Release" src="https://img.shields.io/badge/release-0.1.x-3574F0?style=for-the-badge"></a>
+  <img alt="Versione" src="https://img.shields.io/badge/versione-0.1.x-3574F0?style=for-the-badge">
   <img alt="VS Code 1.93+" src="https://img.shields.io/badge/VS%20Code-1.93%2B-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
   <img alt="WebStorm 2026.1-2026.3" src="https://img.shields.io/badge/WebStorm-2026.1%E2%80%932026.3-000000?style=for-the-badge&logo=webstorm&logoColor=white">
   <img alt="Node 20+" src="https://img.shields.io/badge/Node-20%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
@@ -44,10 +44,10 @@ SlashDeck scopre tutti i comandi disponibili nel tuo workspace, mette in evidenz
 
 | Editor | Pacchetto | Versione |
 | --- | --- | --- |
-| <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" width="16"> **VS Code** (1.93 o successivo) | [⬇️ slashdeck-0.1.1.vsix](../../releases/latest/download/slashdeck-0.1.1.vsix) | 0.1.1 |
-| <img src="https://cdn.simpleicons.org/webstorm/000000" width="16"> **WebStorm** (2026.1 – 2026.3) | [⬇️ slashdeck-jetbrains-0.1.0.zip](../../releases/latest/download/slashdeck-jetbrains-0.1.0.zip) | 0.1.0 |
+| <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" width="16"> **VS Code** (1.93 o successivo) | [⬇️ slashdeck-0.1.1.vsix](https://github.com/tanopaterno84/SlashDeck/raw/main/packages/vscode/slashdeck-0.1.1.vsix) | 0.1.1 |
+| <img src="https://cdn.simpleicons.org/webstorm/000000" width="16"> **WebStorm** (2026.1 – 2026.3) | [⬇️ slashdeck-jetbrains-0.1.0.zip](https://github.com/tanopaterno84/SlashDeck/raw/main/packages/jetbrains/releases/slashdeck-jetbrains-0.1.0.zip) | 0.1.0 |
 
-Tutte le versioni sono nella pagina [Releases](../../releases).
+I pacchetti stanno nella repo: [packages/vscode/](packages/vscode/) e [packages/jetbrains/releases/](packages/jetbrains/releases/).
 
 ### Installazione in VS Code
 

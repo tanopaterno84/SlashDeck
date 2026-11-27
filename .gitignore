@@ -13,3 +13,6 @@ packages/jetbrains/.gradle/
 packages/jetbrains/.intellijPlatform/
 packages/jetbrains/.kotlin/
 packages/jetbrains/build/
+
+# Pacchetti pronti da scaricare, linkati dal README
+!packages/vscode/slashdeck-*.vsix
