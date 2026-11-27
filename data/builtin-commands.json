@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "categories": {
+    "clear": "session",
+    "rename": "session",
+    "recap": "session",
+    "compact": "context",
+    "context": "context",
+    "autocompact": "context",
+    "model": "model-permissions",
+    "effort": "model-permissions",
+    "fast": "model-permissions",
+    "advisor": "model-permissions",
+    "auto-mode-setup": "model-permissions",
+    "fewer-permission-prompts": "model-permissions",
+    "code-review": "review-git",
+    "simplify": "review-git",
+    "security-review": "review-git",
+    "mcp": "mcp-plugins",
+    "reload-plugins": "mcp-plugins",
+    "config": "config",
+    "update-config": "config",
+    "output-style": "config",
+    "color": "config",
+    "focus": "config",
+    "import": "config",
+    "init": "config",
+    "doctor": "config"
+  },
+  "hidden": ["heapdump", "workflow-launch-exec"],
+  "extra": []
+}

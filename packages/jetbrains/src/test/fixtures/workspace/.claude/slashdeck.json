@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "commands": {
+    "/deploy-check": { "guide": { "whenToUse": "Before every release." } }
+  }
+}

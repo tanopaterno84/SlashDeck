@@ -1,0 +1,18 @@
+{
+  "name": "@slashdeck/skill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SlashDeck help skill for Claude Code: SKILL.md plus the core CLI in one file.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "install:project": "node install-project.mjs",
+    "test": "vitest run",
+    "lint": "eslint . && prettier --check ."
+  },
+  "devDependencies": {
+    "@slashdeck/core": "workspace:*",
+    "vitest": "^5.1.2",
+    "yaml": "^2.9.1"
+  }
+}

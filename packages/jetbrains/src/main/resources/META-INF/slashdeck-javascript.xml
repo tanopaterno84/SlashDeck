@@ -1,0 +1,6 @@
+<!-- Loaded only when the JavaScript plugin is installed and enabled (WebStorm, IntelliJ IDEA Ultimate). -->
+<idea-plugin>
+    <extensions defaultExtensionNs="slashdeck.placeholder">
+        <nodeInterpreterProvider implementation="slashdeck.jetbrains.node.JavaScriptNodeInterpreterProvider"/>
+    </extensions>
+</idea-plugin>

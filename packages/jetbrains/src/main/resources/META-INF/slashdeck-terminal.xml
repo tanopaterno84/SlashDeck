@@ -1,0 +1,6 @@
+<!-- Loaded only when the Terminal plugin is installed and enabled. -->
+<idea-plugin>
+    <extensions defaultExtensionNs="slashdeck.placeholder">
+        <claudeTerminalProvider implementation="slashdeck.jetbrains.terminal.ReworkedTerminalProvider"/>
+    </extensions>
+</idea-plugin>

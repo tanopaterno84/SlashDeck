@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+allowBuilds:
+  esbuild: true
+  # Downloads a signing binary, used only to publish to the Marketplace (never done here).
+  '@vscode/vsce-sign': false

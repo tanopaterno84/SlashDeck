@@ -1,0 +1,8 @@
+# Only what the extension needs at runtime goes into the .vsix.
+**
+!dist/extension.cjs
+!media/slashdeck.svg
+!l10n/bundle.l10n.it.json
+!package.nls.json
+!package.nls.it.json
+!README.md

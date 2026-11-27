@@ -1,0 +1,3 @@
+# Windows batch files need CRLF; the wrapper jar is binary.
+*.bat text eol=crlf
+*.jar binary

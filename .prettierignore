@@ -1,0 +1,12 @@
+node_modules
+dist
+coverage
+pnpm-lock.yaml
+CLAUDE.md
+**/test/fixtures
+
+# Gradle and IntelliJ Platform output of packages/jetbrains
+packages/jetbrains/.gradle
+packages/jetbrains/.intellijPlatform
+packages/jetbrains/.kotlin
+packages/jetbrains/build

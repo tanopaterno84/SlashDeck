@@ -1,0 +1,36 @@
+<!-- Plugin Configuration File: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>slashdeck.placeholder</id>
+    <name>SlashDeck</name>
+    <vendor>slashdeck-placeholder</vendor>
+    <description><![CDATA[
+        <p>Shows the slash commands available in Claude Code for the open project, with the project's
+        and the team's own commands first: custom commands, skills and plugin commands, where they come
+        from, which ones are new, and what the team says about when to use them.</p>
+        <p>Requires Node.js 20 or later. SlashDeck runs a small bundled command line tool with Node;
+        it sends nothing over the network and collects no telemetry.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <!-- Optional: "Run" in a terminal where Claude Code is running (reworked terminal only). -->
+    <depends optional="true" config-file="slashdeck-terminal.xml">org.jetbrains.plugins.terminal</depends>
+    <!-- Optional: use the Node.js interpreter configured in the IDE (WebStorm, IntelliJ IDEA Ultimate). -->
+    <depends optional="true" config-file="slashdeck-javascript.xml">JavaScript</depends>
+
+    <resource-bundle>messages.SlashDeckBundle</resource-bundle>
+
+    <extensionPoints>
+        <extensionPoint qualifiedName="slashdeck.placeholder.claudeTerminalProvider"
+                        interface="slashdeck.jetbrains.terminal.ClaudeTerminalProvider" dynamic="true"/>
+        <extensionPoint qualifiedName="slashdeck.placeholder.nodeInterpreterProvider"
+                        interface="slashdeck.jetbrains.node.IdeNodeInterpreterProvider" dynamic="true"/>
+    </extensionPoints>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="SlashDeck" anchor="right" icon="/icons/slashdeck.svg"
+                    factoryClass="slashdeck.jetbrains.toolwindow.SlashDeckToolWindowFactory"/>
+        <applicationConfigurable parentId="tools" id="slashdeck.settings"
+                                 instance="slashdeck.jetbrains.settings.SlashDeckConfigurable"
+                                 bundle="messages.SlashDeckBundle" key="settings.title"/>
+    </extensions>
+</idea-plugin>

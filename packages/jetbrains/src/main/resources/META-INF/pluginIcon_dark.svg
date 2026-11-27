@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <!-- SlashDeck: a deck of cards, the first card marked with a slash. -->
+  <rect x="2" y="2" width="36" height="36" rx="8" fill="#548AF7"/>
+  <g fill="none" stroke="#1E1F22" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 9.5h12"/>
+    <path d="M11 13.5h18"/>
+    <rect x="8.5" y="17.5" width="23" height="14" rx="2.5"/>
+    <path d="M22 20.5l-4 8"/>
+  </g>
+</svg>

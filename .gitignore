@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.tsbuildinfo
+.DS_Store
+.vscode-test/
+*.vsix
+.claude/skills/slashdeck/
+
+# Gradle and IntelliJ Platform output of packages/jetbrains
+packages/jetbrains/.gradle/
+packages/jetbrains/.intellijPlatform/
+packages/jetbrains/.kotlin/
+packages/jetbrains/build/

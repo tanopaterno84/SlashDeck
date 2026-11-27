@@ -1,0 +1,314 @@
+{
+  "name": "slashdeck",
+  "displayName": "SlashDeck",
+  "description": "%extension.description%",
+  "version": "0.1.1",
+  "private": true,
+  "publisher": "slashdeck-placeholder",
+  "type": "module",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "slash commands",
+    "skills"
+  ],
+  "main": "./dist/extension.cjs",
+  "l10n": "./l10n",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "%capabilities.untrustedWorkspaces%",
+      "restrictedConfigurations": [
+        "slashdeck.claudePath"
+      ]
+    },
+    "virtualWorkspaces": false
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "slashdeck",
+          "title": "SlashDeck",
+          "icon": "media/slashdeck.svg"
+        }
+      ]
+    },
+    "views": {
+      "slashdeck": [
+        {
+          "id": "slashdeck.commands",
+          "name": "%view.commands%",
+          "icon": "media/slashdeck.svg",
+          "contextualTitle": "SlashDeck"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "slashdeck.commands",
+        "contents": "%welcome.loading%",
+        "when": "slashdeck.viewState == loading"
+      },
+      {
+        "view": "slashdeck.commands",
+        "contents": "%welcome.empty%",
+        "when": "slashdeck.viewState == empty"
+      },
+      {
+        "view": "slashdeck.commands",
+        "contents": "%welcome.error%",
+        "when": "slashdeck.viewState == error"
+      }
+    ],
+    "commands": [
+      {
+        "command": "slashdeck.search",
+        "title": "%command.search%",
+        "category": "SlashDeck",
+        "icon": "$(search)"
+      },
+      {
+        "command": "slashdeck.refresh",
+        "title": "%command.refresh%",
+        "category": "SlashDeck",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "slashdeck.selectFolder",
+        "title": "%command.selectFolder%",
+        "category": "SlashDeck",
+        "icon": "$(root-folder)"
+      },
+      {
+        "command": "slashdeck.showLog",
+        "title": "%command.showLog%",
+        "category": "SlashDeck"
+      },
+      {
+        "command": "slashdeck.showActions",
+        "title": "%command.showActions%",
+        "category": "SlashDeck"
+      },
+      {
+        "command": "slashdeck.copy",
+        "title": "%command.copy%",
+        "category": "SlashDeck",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "slashdeck.run",
+        "title": "%command.run%",
+        "category": "SlashDeck",
+        "icon": "$(play)"
+      },
+      {
+        "command": "slashdeck.openSource",
+        "title": "%command.openSource%",
+        "category": "SlashDeck",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "slashdeck.pin",
+        "title": "%command.pin%",
+        "category": "SlashDeck",
+        "icon": "$(pin)"
+      },
+      {
+        "command": "slashdeck.unpin",
+        "title": "%command.unpin%",
+        "category": "SlashDeck",
+        "icon": "$(pinned)"
+      },
+      {
+        "command": "slashdeck.editDescription",
+        "title": "%command.editDescription%",
+        "category": "SlashDeck"
+      },
+      {
+        "command": "slashdeck.editWhenToUse",
+        "title": "%command.editWhenToUse%",
+        "category": "SlashDeck"
+      },
+      {
+        "command": "slashdeck.resetEdits",
+        "title": "%command.resetEdits%",
+        "category": "SlashDeck"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "slashdeck.selectFolder",
+          "when": "workspaceFolderCount > 1"
+        },
+        {
+          "command": "slashdeck.showActions",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.copy",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.run",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.openSource",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.pin",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.unpin",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.editDescription",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.editWhenToUse",
+          "when": "false"
+        },
+        {
+          "command": "slashdeck.resetEdits",
+          "when": "false"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "slashdeck.search",
+          "when": "view == slashdeck.commands",
+          "group": "navigation@1"
+        },
+        {
+          "command": "slashdeck.refresh",
+          "when": "view == slashdeck.commands",
+          "group": "navigation@2"
+        },
+        {
+          "command": "slashdeck.selectFolder",
+          "when": "view == slashdeck.commands && workspaceFolderCount > 1",
+          "group": "navigation@3"
+        },
+        {
+          "command": "slashdeck.showLog",
+          "when": "view == slashdeck.commands",
+          "group": "9_log"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "slashdeck.copy",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b/",
+          "group": "inline@1"
+        },
+        {
+          "command": "slashdeck.run",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b/ && slashdeck.claudeTerminalDetected",
+          "group": "inline@2"
+        },
+        {
+          "command": "slashdeck.pin",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b.*\\bunpinned\\b/",
+          "group": "inline@3"
+        },
+        {
+          "command": "slashdeck.unpin",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b.*\\bpinned\\b/",
+          "group": "inline@3"
+        },
+        {
+          "command": "slashdeck.copy",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b/",
+          "group": "1_use@1"
+        },
+        {
+          "command": "slashdeck.run",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b/ && slashdeck.claudeTerminalDetected",
+          "group": "1_use@2"
+        },
+        {
+          "command": "slashdeck.openSource",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b.*\\bhasSource\\b/",
+          "group": "2_open@1"
+        },
+        {
+          "command": "slashdeck.pin",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b.*\\bunpinned\\b/",
+          "group": "3_pin@1"
+        },
+        {
+          "command": "slashdeck.unpin",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b.*\\bpinned\\b/",
+          "group": "3_pin@1"
+        },
+        {
+          "command": "slashdeck.editDescription",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b/",
+          "group": "4_edit@1"
+        },
+        {
+          "command": "slashdeck.editWhenToUse",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b/",
+          "group": "4_edit@2"
+        },
+        {
+          "command": "slashdeck.resetEdits",
+          "when": "view == slashdeck.commands && viewItem =~ /^command\\b.*\\bedited\\b/",
+          "group": "4_edit@3"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "SlashDeck",
+      "properties": {
+        "slashdeck.claudePath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "markdownDescription": "%config.claudePath%"
+        },
+        "slashdeck.refreshOnStartup": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%config.refreshOnStartup%"
+        },
+        "slashdeck.focusClaudeCodeAfterCopy": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%config.focusClaudeCodeAfterCopy%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc --noEmit && node build.mjs",
+    "vscode:prepublish": "node build.mjs --production",
+    "package": "vsce package --no-dependencies --skip-license --allow-missing-repository",
+    "test": "vitest run",
+    "test:integration": "node build.mjs && node test-integration/run.mjs",
+    "lint": "eslint . && prettier --check ."
+  },
+  "devDependencies": {
+    "@slashdeck/core": "workspace:*",
+    "@types/vscode": "~1.93.0",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^4.1.1",
+    "esbuild": "^0.28.2",
+    "vitest": "^5.1.2"
+  }
+}
